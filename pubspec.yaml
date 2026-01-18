@@ -67,7 +67,10 @@ flutter:
     - assets/controlPage_footer.png
     - assets/robot_new.png
     - assets/small_robot_icon.png
+    - assets/footer_robot.png
     - assets/footer_robots.png
+    - assets/mic.png
+    - assets/Footer2.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
