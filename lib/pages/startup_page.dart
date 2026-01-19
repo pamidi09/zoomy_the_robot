@@ -30,7 +30,7 @@ class _StartupPageState extends State<StartupPage> {
             SizedBox(
               height: 180,
               child: Image.asset(
-                'assets/robot2.png',
+                'assets/robot_new.png',
                 fit: BoxFit.contain,
               ),
             ),
@@ -95,7 +95,7 @@ class _StartupPageState extends State<StartupPage> {
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 30),
 
                   // 🔥 CONNECT BUTTON
                   SizedBox(
@@ -129,12 +129,12 @@ class _StartupPageState extends State<StartupPage> {
                     ),
                   ),
 
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 40),
 
                   // Footer Logo
                   Image.asset(
                     'assets/startupPage_logo.png',
-                    height: 50,
+                    height: 75,
                     fit: BoxFit.contain,
                   ),
                 ],
