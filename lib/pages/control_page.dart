@@ -99,21 +99,15 @@ class _ControlPageState extends State<ControlPage> {
   }
 
   void _turnLeft() {
-    esp32.turn(0.3);
+    esp32.turnLeft();
     _speak("Turning left");
     _resetAutoStop();
-    setState(() {
-      _spokenText = "Turning left";
-    });
   }
 
   void _turnRight() {
-    esp32.turn(0.7);
+    esp32.turnRight();
     _speak("Turning right");
     _resetAutoStop();
-    setState(() {
-      _spokenText = "Turning right";
-    });
   }
 
   void _stopRobot() {
@@ -129,6 +123,8 @@ class _ControlPageState extends State<ControlPage> {
   // ================= VOICE COMMAND HANDLER =================
 
   void _handleVoiceCommand(String command) {
+    print("VOICE: $command");
+
     if (command.contains("forward") || command.contains("ඉදිරියට")) {
       _moveForward();
     } else if (command.contains("back") || command.contains("පසුපසට")) {
