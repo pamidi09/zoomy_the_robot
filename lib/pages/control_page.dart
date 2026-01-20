@@ -155,40 +155,44 @@ class _ControlPageState extends State<ControlPage> {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Container(
+                width: 300,
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(28),
                 ),
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        if (_isListening) {
-                          _stopListening();
-                        } else {
-                          _startListening();
-                        }
-                      },
-                      child: CircleAvatar(
-                        radius: 16,
-                        backgroundColor: _isListening ? Colors.red : const Color(0xFF0D8BFF),
-                        child: Icon(
-                          _isListening ? Icons.mic_off : Icons.mic,
-                          color: Colors.white,
-                          size: 20,
+                child: Center(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          if (_isListening) {
+                            _stopListening();
+                          } else {
+                            _startListening();
+                          }
+                        },
+                        child: CircleAvatar(
+                          radius: 16,
+                          backgroundColor: _isListening ? Colors.red : const Color(0xFF0D8BFF),
+                          child: Icon(
+                            _isListening ? Icons.mic_off : Icons.mic,
+                            color: Colors.white,
+                            size: 20,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 12),
-                    const Text(
-                      "ESP32 Self-Balancing Robot",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                      const SizedBox(width: 12),
+                      const Text(
+                        "Zoomy Voice Control",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -255,12 +259,35 @@ class _ControlPageState extends State<ControlPage> {
               ),
             ),
 
-            const SizedBox(height: 20),
+            const Spacer(),
 
-            Expanded(
-              child: Image.asset(
-                'assets/startupPage_logo.png',
-                fit: BoxFit.contain,
+            Container(
+              width: double.infinity,
+              padding:
+              const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(36),
+                  topRight: Radius.circular(36),
+                ),
+              ),
+
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/footer_robot.png',
+                    height: 100,
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 20),
+                  Image.asset(
+                    'assets/Footer2.png',
+                    height: 35,
+                    fit: BoxFit.contain,
+                  ),
+                ],
               ),
             ),
           ],
