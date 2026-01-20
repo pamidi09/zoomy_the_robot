@@ -42,14 +42,17 @@ class _ControlPageState extends State<ControlPage> {
       setState(() => _isListening = true);
       _speech.listen(
         onResult: (result) {
-          setState(() {
-            _spokenText = result.recognizedWords.toLowerCase();
-          });
-          _handleVoiceCommand(_spokenText);
+          if (result.confidence > 0.6) {
+            final text = result.recognizedWords.toLowerCase();
+            print("VOICE: $text");
+            _handleVoiceCommand(text);
+            _speech.stop(); // prevent repeated commands
+          }
         },
       );
     }
   }
+
 
   void _stopListening() {
     _speech.stop();
