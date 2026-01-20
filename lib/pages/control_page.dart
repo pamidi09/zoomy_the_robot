@@ -155,7 +155,7 @@ class _ControlPageState extends State<ControlPage> {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Container(
-                width: 300,
+                width: 350,
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 decoration: BoxDecoration(
                   color: Colors.white,
